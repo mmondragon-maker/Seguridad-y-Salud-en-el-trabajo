@@ -360,6 +360,7 @@ export default function App() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [revision, setRevision] = useState(0);
   const [toast, setToast] = useState("");
+  const [temporaryData, setTemporaryData] = useState(false);
   const notify = (message: string) => {
     setToast(message);
     window.setTimeout(() => setToast(""), 4500);
@@ -382,6 +383,11 @@ export default function App() {
       .then(setCompany)
       .catch(() => {});
   }, [revision]);
+  useEffect(() => {
+    api<{ temporaryData?: boolean }>("/health")
+      .then((health) => setTemporaryData(Boolean(health.temporaryData)))
+      .catch(() => {});
+  }, []);
   const refresh = () => setRevision((value) => value + 1);
   return (
     <div className="app-shell">
@@ -475,6 +481,15 @@ export default function App() {
             <span className="topbar-avatar">EH</span>
           </div>
         </header>
+        {temporaryData && (
+          <div className="temporary-data-notice" role="note">
+            <TriangleAlert size={18} aria-hidden="true" />
+            <span>
+              <strong>Prueba temporal.</strong> Usa datos ficticios: los registros
+              pueden perderse al reiniciar el servicio.
+            </span>
+          </div>
+        )}
         <main key={page}>
           {page === "dashboard" && (
             <DashboardPage revision={revision} go={go} />

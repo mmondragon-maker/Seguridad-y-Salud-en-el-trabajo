@@ -72,4 +72,4 @@ En el entorno administrado de Codex, los builds requieren el proxy y su CA media
 
 La compilación de la interfaz y la comprobación de tipos pasan. Las diez pruebas del servidor pasan, incluidas las dos del acceso protegido. Se probó además la entrada de producción en un navegador con credenciales temporales y una base aislada, con API rechazada sin credenciales y datos conservados después de reiniciar el proceso.
 
-No se ha verificado una importación o un despliegue en Sites, una llamada real de IA ni la construcción de la plantilla Docker. No hay una dirección pública creada por este paquete.
+No se ha verificado una importación o un despliegue en Sites ni una llamada real de IA. Posteriormente se construyó y probó la imagen Docker con acceso protegido y se preparó un piloto gratuito de datos temporales; consulta `docs/alojamiento-gratuito.md`. La activación del alojamiento y la verificación de su dirección pública siguen pendientes.

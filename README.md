@@ -1,5 +1,9 @@
 # Nexo EHS
 
+[Preparar el sitio de pruebas gratuito en Render](https://render.com/deploy?repo=https%3A%2F%2Fgithub.com%2Fmmondragon-maker%2FSeguridad-y-Salud-en-el-trabajo) · [Guía de activación y límites](docs/alojamiento-gratuito.md)
+
+El despliegue gratuito conserva las modificaciones del código en GitHub. Los registros de prueba son temporales y pueden perderse al reiniciar; la interfaz lo avisa. La activación y la URL final requieren conectar la cuenta del propietario en Render.
+
 Primera versión de una plataforma de gestión de **Seguridad, Salud y Medio Ambiente para México**, con un piloto de manufactura en Guadalajara, Jalisco. Convierte el perfil de una instalación en una lista de revisiones normativas y permite organizar acciones, capacitación, riesgos y fuentes para una auditoría.
 
 El repositorio contiene una aplicación local con datos de demostración. Las referencias del catálogo son orientativas y están pendientes de cotejo; no se incluye un corpus legal oficialmente validado. Marcar una tarea como terminada expresa un avance interno, no acredita cumplimiento ante una autoridad.

@@ -46,4 +46,6 @@ El modelo recibe instrucciones de usar solo el corpus y citar `[id]`. Se valida 
 
 `npm test` ejecuta diez pruebas con SQLite en memoria y HTTP local efímero, además de persistencia en un directorio temporal y mocks de la API de IA. No utiliza claves reales ni solicitudes externas. `npm run typecheck` revisa tipos. Los tests cubren aplicabilidad y conservación de avance, integridad de participantes, edición de personas con historial, análisis HAZOP, restricciones de fuentes, recuperación en textos largos, errores, persistencia y rechazo de citas generativas ajenas al corpus.
 
+`GET /api/health` también informa `temporaryData:boolean`. Con `EHS_TEMPORARY_DATA=1`, `mode` es `web-demo-temporary` y la interfaz muestra que los registros pueden perderse al reiniciar. Sin esa opción, `temporaryData` es falso y se mantiene `local-demo`. El campo informa la configuración: no verifica por sí mismo la durabilidad del disco del proveedor.
+
 Dos de estas pruebas verifican el acceso protegido del piloto: bloqueo de interfaz, recursos, API y escrituras sin credenciales, estado técnico público y validación de configuración.

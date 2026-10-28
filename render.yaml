@@ -1,0 +1,25 @@
+# Free pilot. Source changes persist in GitHub; demo records are temporary.
+services:
+  - type: web
+    name: nexo-ehs-pruebas
+    runtime: docker
+    plan: free
+    region: oregon
+    branch: main
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    healthCheckPath: /api/health
+    autoDeploy: true
+    envVars:
+      - key: PORT
+        value: "10000"
+      - key: EHS_DB_PATH
+        value: /tmp/nexo-ehs.sqlite
+      - key: EHS_TEMPORARY_DATA
+        value: "1"
+      - key: EHS_REQUIRE_PILOT_AUTH
+        value: "1"
+      - key: EHS_PILOT_USER
+        value: piloto
+      - key: EHS_PILOT_PASSWORD
+        generateValue: true

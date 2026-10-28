@@ -302,6 +302,20 @@ svg {
 .sidebar-user > svg {
   color: #789584;
 }
+.temporary-data-notice {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 24px;
+  background: #fff4d6;
+  color: #684700;
+  border-bottom: 1px solid #e8d29b;
+  font-size: 13px;
+  line-height: 1.5;
+}
+.temporary-data-notice svg {
+  flex-shrink: 0;
+}
 .app-body {
   margin-left: 250px;
   min-width: 0;

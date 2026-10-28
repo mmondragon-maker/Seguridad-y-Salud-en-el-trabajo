@@ -292,7 +292,11 @@ export function createApp(
     res.json({
       status: "ok",
       database: "sqlite",
-      mode: "local-demo",
+      mode:
+        process.env.EHS_TEMPORARY_DATA === "1"
+          ? "web-demo-temporary"
+          : "local-demo",
+      temporaryData: process.env.EHS_TEMPORARY_DATA === "1",
       aiEnabled: Boolean(process.env.EHS_AI_API_KEY),
     });
   });
