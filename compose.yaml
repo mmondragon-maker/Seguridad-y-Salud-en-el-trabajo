@@ -1,0 +1,13 @@
+services:
+  nexo-ehs:
+    build: .
+    ports:
+      - "127.0.0.1:3000:3000"
+    environment:
+      EHS_PILOT_USER: ${EHS_PILOT_USER:?Define EHS_PILOT_USER antes de arrancar}
+      EHS_PILOT_PASSWORD: ${EHS_PILOT_PASSWORD:?Define EHS_PILOT_PASSWORD antes de arrancar}
+    volumes:
+      - nexo-data:/app/data
+    restart: unless-stopped
+volumes:
+  nexo-data:
